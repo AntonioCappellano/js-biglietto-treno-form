@@ -2,6 +2,7 @@ const isTicketForm = document.getElementById("ticket-form");
 const isNumberKm = document.getElementById("kilometre-input");
 const isUserAge = document.getElementById("age-input");
 const sendBtn = document.getElementById("send-btn");
+const finalTicketComplete = document.getElementById("final-ticket");
 
 console.log(isTicketForm);
 console.log(isNumberKm);
@@ -27,4 +28,16 @@ isTicketForm.addEventListener("submit", (event) => {
   totalPrice = totalPrice.toFixed(2);
 
   console.log(`Prezzo finale: €${totalPrice}`);
+
+  finalTicketComplete.innerHTML = `
+  <div class="container">
+    <h1 class="text-center">Prezzo Finale</h1>
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title"> Costo Biglietto:</h3>
+        <p class="fs-3 text-decoration-underline text-danger"> ${totalPrice} </p>
+      </div>
+    </div>
+  </div>;
+  `;
 });
